@@ -212,3 +212,151 @@ return false;
 } 
 }); 
 }
+public static void main1(String[] args) { 
+SwingUtilities.invokeLater(new Runnable() { 
+public void run() { 
+JFrame form3 = new JFrame("form2"); 
+form3.setTitle("Изменение налоговой ставки"); 
+form3.setSize(475, 290); 
+form3.setLocationRelativeTo(null); 
+form3.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); 
+form3.setLayout (new BorderLayout()); 
+form3.setVisible(true); 
+JButton calc3,calc4; 
+JPanel panel2,panel3; 
+JLabel label_1,label_n1,label_n2,label_n3,label_n4, 
+label_n5,label_n6,label_n7,label_n8,label_n9,label_n10, 
+label_n11,label_n12,label_n13,label_n14,label_n15,label_n16, 
+label_n17,label_n18,label_n121,label_n131,label_2,label_3; 
+JTextField sum_ok,sum_ok1,sum_ok2,sum_ok3,sum_ok4; 
+form3.setLayout (new BorderLayout()); 
+panel2 = new JPanel(); 
+panel3 = new JPanel(); 
+form3.add(panel2, BorderLayout.CENTER); 
+form3.add(panel3, BorderLayout.SOUTH); 
+panel2.setBorder(new EmptyBorder(10,10,10,10)); 
+panel3.setBorder(new EmptyBorder(10,10,10,10)); 
+panel2.setLayout(new GridLayout(7,4,5,0)); 
+panel3.setLayout(new GridLayout(1,2)); 
+label_1 = new JLabel("Изменить процент", JLabel.LEFT); 
+label_n1 = new JLabel("налоговой ставки", JLabel.LEFT); 
+label_n2 = new JLabel("для:", JLabel.LEFT); 
+label_n3 = new JLabel("", JLabel.LEFT); 
+label_n4 = new JLabel("Девидент", JLabel.LEFT); 
+label_n5 = new JLabel("", JLabel.LEFT); 
+label_n6 = new JLabel("Недевидент", JLabel.LEFT); 
+label_n7 = new JLabel("", JLabel.LEFT); 
+label_n8 = new JLabel("", JLabel.LEFT); 
+label_n9 = new JLabel("Доход", JLabel.RIGHT); 
+label_n10 = new JLabel("это:", JLabel.LEFT); 
+label_n11 = new JLabel("", JLabel.LEFT); 
+label_n12 = new JLabel("Выйгрыш или", JLabel.LEFT); 
+label_n121 = new JLabel("займ", JLabel.LEFT); 
+label_n13 = new JLabel("Любой доход", JLabel.LEFT); 
+label_n131 = new JLabel("гражданина ЕАЭС", JLabel.LEFT); 
+label_2 = new JLabel("", JLabel.LEFT); 
+label_3 = new JLabel("", JLabel.LEFT); 
+label_n14 = new JLabel("Иное", JLabel.LEFT); 
+label_n15 = new JLabel("Дивиденты", JLabel.LEFT); 
+label_n16 = new JLabel("", JLabel.LEFT); 
+label_n17 = new JLabel("", JLabel.LEFT); 
+label_n18 = new JLabel("Иное", JLabel.LEFT); 
+calc3 = new JButton("В меню"); 
+calc4 = new JButton("Изменить"); 
+sum_ok = new JTextField(); 
+sum_ok.setHorizontalAlignment(JTextField.CENTER); 
+sum_ok.setMargin(new Insets(2, 5, 2, 5)); 
+sum_ok1 = new JTextField(); 
+sum_ok1.setHorizontalAlignment(JTextField.CENTER); 
+sum_ok1.setMargin(new Insets(2, 5, 2, 5)); 
+sum_ok2 = new JTextField(""); 
+sum_ok2.setHorizontalAlignment(JTextField.CENTER); 
+sum_ok2.setMargin(new Insets(2, 5, 2, 5)); 
+sum_ok3 = new JTextField(); 
+sum_ok3.setHorizontalAlignment(JTextField.CENTER); 
+sum_ok3.setMargin(new Insets(2, 5, 2, 5)); 
+sum_ok4 = new JTextField(); 
+sum_ok4.setHorizontalAlignment(JTextField.CENTER); 
+sum_ok4.setMargin(new Insets(2, 5, 2, 5)); 
+panel2.add(label_1); 
+panel2.add(label_n1); 
+panel2.add(label_n2); 
+panel2.add(label_n3); 
+panel2.add(label_n4); 
+panel2.add(label_n5); 
+panel2.add(label_n6); 
+panel2.add(label_n7); 
+panel2.add(label_n8); 
+panel2.add(label_n9); 
+panel2.add(label_n10); 
+panel2.add(label_n11); 
+panel2.add(label_n12); 
+panel2.add(sum_ok); 
+panel2.add(label_n13); 
+panel2.add(sum_ok1); 
+panel2.add(label_n121); 
+panel2.add(label_2); 
+panel2.add(label_n131); 
+panel2.add(label_3); 
+panel2.add(label_n14); 
+panel2.add(sum_ok2); 
+panel2.add(label_n15); 
+panel2.add(sum_ok3); 
+panel2.add(label_n16); 
+panel2.add(label_n17); 
+panel2.add(label_n18); 
+panel2.add(sum_ok4); 
+panel3.add(calc3); 
+panel3.add(calc4); 
+calc3.addActionListener(new ActionListener() 
+{ 
+public void actionPerformed(ActionEvent e) 
+{form3.dispose();}}); 
+calc4.addActionListener(new ActionListener() { 
+public void actionPerformed(ActionEvent e) { 
+if (isValidInput(sum_ok,"")) { 
+a4= Double.parseDouble(sum_ok.getText().replace(',','.')); 
+int_rad=(int) a4; 
+} 
+if (isValidInput(sum_ok1,"")) { 
+a1=
+ 
+Double.parseDouble(sum_ok1.getText().replace(',','.')); 
+int_rad=(int) a1; 
+} 
+if (isValidInput(sum_ok2,"")) { 
+a= Double.parseDouble(sum_ok2.getText().replace(',','.')); 
+int_rad=(int) a; 
+} 
+if (isValidInput(sum_ok3,"")) { 
+a2= Double.parseDouble(sum_ok3.getText().replace(',','.')); 
+int_rad=(int) a2; 
+} 
+if (isValidInput(sum_ok4,"")) { 
+a3= Double.parseDouble(sum_ok4.getText().replace(',','.'));; 
+int_rad=(int) a3; 
+} 
+} 
+public boolean isValidInput(JTextField jtxt, String description) { 
+JDialog D = new JDialog(); 
+if (jtxt.getText().trim().length() > 0) { 
+try { 
+double num = Double.parseDouble(jtxt.getText().replace(',','.')); 
+return true; 
+} catch (NumberFormatException e) { 
+jtxt.requestFocus(); 
+jtxt.setText(""); 
+JOptionPane.showMessageDialog(D, "Вы должны ввести число!", "Ошибка", JOptionPane.WARNING_MESSAGE); 
+return false; 
+} 
+} else { 
+JOptionPane.showMessageDialog(D, "Введите " + description, "Ошибка", JOptionPane.WARNING_MESSAGE); 
+jtxt.requestFocus(); 
+jtxt.selectAll(); 
+return false; 
+} 
+} 
+}); 
+} 
+}); 
+}}

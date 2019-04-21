@@ -432,24 +432,28 @@ public void actionPerformed(ActionEvent e)
 if (isValidInput(sum_ok, "сумму оклада")) { 
 	/* В переменную  записываются данные введеные пользователем в текстовое поле которое расположено в файле Nalog.
 	Преобразование данных в тип Double. */ 
-double d_sum_ok= Double.parseDouble(sum_ok.getText().replace(',','.')); 
-/*Расчёт суммы налога*/
-double d_sum_n = d_sum_ok/100*int_rad; 
-/*Расчёт суммы на руки*/
-double d_sum = d_sum_ok-d_sum_n;
-/* String - указываем что переменная будет иметь строковый тип,
- * s_pmax - название новой переменной,
- * String.format - преобразование переменной в строкой тип,
- 	%.2f - указываем что переменная имеет тип Float, показываем 2 знака после запятой,
- 	d_pmax - переменная типа double, которую надо преобразовать в строковый тип
- 	 */ 
+	double d = Double.valueOf(sum_ok.getText().toString()); 
+	/*Расчёт суммы налога*/
+	double pr = int_rad; 
+	/*Расчёт суммы на руки*/
+	tax tax = new tax();
+	
+	double t = tax.calcTax(d, pr);
+	double t2 = tax.calcTax2(d, pr);
+	/* String - указываем что переменная будет иметь строковый тип,
+	 * s_pmax - название новой переменной,
+	 * String.format - преобразование переменной в строкой тип,
+	 	%.2f - указываем что переменная имеет тип Float, показываем 2 знака после запятой,
+	 	d_pmax - переменная типа double, которую надо преобразовать в строковый тип
+	 	 */ 
 
-String s_sum_n = String.format("%.2f", d_sum_n); 
-/* Записываем строковую переменную в поля Jlabel */
-sum_n.setText(s_sum_n); 
-String s_sum = String.format("%.2f", d_sum); 
-/* Записываем строковую переменную в поля Jlabel */
-sum.setText(s_sum); 
+	String s_sum_n = String.format("%.2f", t); 
+	/* Записываем строковую переменную в поля Jlabel */
+	sum_n.setText(s_sum_n); 
+	String s_sum = String.format("%.2f", t2); 
+	/* Записываем строковую переменную в поля Jlabel */
+	sum.setText(s_sum); 
+
 
 } 
 } 

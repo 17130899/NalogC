@@ -790,8 +790,6 @@ public boolean isValidInput(JTextField jtxt, String description) {
         }
      /* если пользователь не ввёл никаких данных*/
     } else {
-        /*предупреждение, что нужно ввести данные*/
-        JOptionPane.showMessageDialog(D, "Введите " + description, "Ошибка", JOptionPane.WARNING_MESSAGE);
         /*расположить курсор в текстово окне, чтобы пользователь еще раз ввел число*/
         jtxt.requestFocus();
       /*очистить текстовое поле*/
